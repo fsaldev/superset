@@ -31,7 +31,7 @@ x-superset-volumes: &superset-volumes
   - ./superset:/app/superset
   - ./superset-core:/app/superset-core
   - ./superset-frontend:/app/superset-frontend
-  - superset_home:/app/superset_home
+  - superset_superset_home:/app/superset_home
   - ./tests:/app/tests
   - superset_data:/app/data
 x-common-build: &common-build
@@ -71,7 +71,7 @@ services:
     ports:
       - "127.0.0.1:6379:6379"
     volumes:
-      - redis:/data
+      - superset_redis:/data
 
   db:
     env_file:
@@ -85,7 +85,7 @@ services:
     ports:
       - "127.0.0.1:5432:5432"
     volumes:
-      - db_home:/var/lib/postgresql/data
+      - superset_db_home:/var/lib/postgresql/data
       - ./docker/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
 
   superset:
