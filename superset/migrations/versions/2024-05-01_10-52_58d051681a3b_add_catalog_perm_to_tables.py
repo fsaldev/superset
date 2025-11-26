@@ -42,7 +42,7 @@ def upgrade():
     add_columns(
         "slices", sa.Column("catalog_perm", sa.String(length=1000), nullable=True)
     )
-    upgrade_catalog_perms(engines={"postgresql"})
+    # upgrade_catalog_perms(engines={"postgresql"})
 
 
 def downgrade():
