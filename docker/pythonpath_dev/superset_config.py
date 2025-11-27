@@ -47,7 +47,22 @@ CORS_OPTIONS = {
 }
 GUEST_ROLE_NAME = "Gamma"
 
-TALISMAN_ENABLED = False
+# Talisman Config
+TALISMAN_ENABLED = True
+TALISMAN_CONFIG = {
+    "content_security_policy": {
+        "frame-ancestors":  [
+            "https://analysis.sodahub.eu",
+            "https://app.sodahub.eu", 
+            "https://dev-app.sodahub.eu", 
+            "http://localhost:8088",
+        ],
+    },
+    "force_https": False,
+    "force_https_permanent": False,
+    "frame_options": "ALLOWFROM",
+    "frame_options_allow_from": "*"
+}
 OVERRIDE_HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
 
 EXAMPLES_USER = os.getenv("EXAMPLES_USER")
