@@ -49,7 +49,7 @@ CORS_OPTIONS = {
 GUEST_ROLE_NAME = "Gamma"
 
 # Talisman Config
-TALISMAN_ENABLED = False
+TALISMAN_ENABLED = True
 TALISMAN_CONFIG = {
     "content_security_policy": {
         "frame-ancestors":  [
