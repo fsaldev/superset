@@ -47,27 +47,28 @@ CORS_OPTIONS = {
   'origins': ['http://localhost:8088', 'http://localhost:8888']
 }
 GUEST_ROLE_NAME = "Gamma"
-# GUEST_TOKEN_JWT_SECRET = "test-guest-secret-change-me"
-# GUEST_TOKEN_JWT_ALGO = "HS256"
-# GUEST_TOKEN_HEADER_NAME = "X-GuestToken"
-# GUEST_TOKEN_JWT_EXP_SECONDS = 900
+GUEST_TOKEN_JWT_SECRET = "euyqwuiada#!@#jjhbbAJB"
+GUEST_TOKEN_JWT_ALGO = "HS256"
+GUEST_TOKEN_HEADER_NAME = "X-GuestToken"
+GUEST_TOKEN_JWT_EXP_SECONDS = 300
 
 # Talisman Config
-TALISMAN_ENABLED = False
-# TALISMAN_CONFIG = {
-#     "content_security_policy": {
-#         "frame-ancestors":  [
-#             "https://analysis.sodahub.eu",
-#             "https://app.sodahub.eu", 
-#             "https://dev-app.sodahub.eu", 
-#             "http://localhost:8088",
-#         ],
-#     },
-#     "force_https": False,
-#     "force_https_permanent": False,
-#     "frame_options": "ALLOWFROM",
-#     "frame_options_allow_from": "*"
-# }
+TALISMAN_ENABLED = True
+TALISMAN_CONFIG = {
+    "content_security_policy": {
+        "frame-ancestors":  [
+            "self",
+            "https://app.sodahub.eu", 
+            "https://dev-app.sodahub.eu", 
+            "http://localhost:8088",
+        ],
+    },
+    "force_https": False,
+    "force_https_permanent": False,
+    "frame_options": "ALLOWFROM",
+    "frame_options_allow_from": "*"
+}
+
 # HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
 OVERRIDE_HTTP_HEADERS = {
     "X-Frame-Options": "ALLOWALL",
