@@ -64,9 +64,7 @@ TALISMAN_CONFIG = {
         ],
     },
     "force_https": False,
-    "force_https_permanent": False,
-    "frame_options": "ALLOWFROM",
-    "frame_options_allow_from": "*"
+    "session_cookie_secure": False
 }
 
 # HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
