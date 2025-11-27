@@ -67,10 +67,12 @@ TALISMAN_CONFIG = {
     "session_cookie_secure": False
 }
 
-# HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
-OVERRIDE_HTTP_HEADERS = {
-    "X-Frame-Options": "ALLOWALL",
+HTTP_HEADERS = {
+    'X-Frame-Options': 'ALLOWALL'
 }
+# OVERRIDE_HTTP_HEADERS = {
+#     "X-Frame-Options": "ALLOWALL",
+# }
 
 EXAMPLES_USER = os.getenv("EXAMPLES_USER")
 EXAMPLES_PASSWORD = os.getenv("EXAMPLES_PASSWORD")
