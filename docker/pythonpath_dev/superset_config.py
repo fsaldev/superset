@@ -39,30 +39,31 @@ DATABASE_DB = os.getenv("DATABASE_DB")
 SESSION_COOKIE_SAMESITE = None
 ENABLE_PROXY_FIX = True
 PUBLIC_ROLE_LIKE_GAMMA = True
+ENABLE_CORS = True
 CORS_OPTIONS = {
   'supports_credentials': True,
   'allow_headers': ['*'],
   'resources':['*'],
-  'origins': ['http://localhost:8088', 'http://localhost:8888']
+  'origins': ['*']
 }
 GUEST_ROLE_NAME = "Gamma"
 
 # Talisman Config
-TALISMAN_ENABLED = True
-TALISMAN_CONFIG = {
-    "content_security_policy": {
-        "frame-ancestors":  [
-            "https://analysis.sodahub.eu",
-            "https://app.sodahub.eu", 
-            "https://dev-app.sodahub.eu", 
-            "http://localhost:8088",
-        ],
-    },
-    "force_https": False,
-    "force_https_permanent": False,
-    "frame_options": "ALLOWFROM",
-    "frame_options_allow_from": "*"
-}
+TALISMAN_ENABLED = False
+# TALISMAN_CONFIG = {
+#     "content_security_policy": {
+#         "frame-ancestors":  [
+#             "https://analysis.sodahub.eu",
+#             "https://app.sodahub.eu", 
+#             "https://dev-app.sodahub.eu", 
+#             "http://localhost:8088",
+#         ],
+#     },
+#     "force_https": False,
+#     "force_https_permanent": False,
+#     "frame_options": "ALLOWFROM",
+#     "frame_options_allow_from": "*"
+# }
 OVERRIDE_HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
 
 EXAMPLES_USER = os.getenv("EXAMPLES_USER")
