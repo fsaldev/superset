@@ -44,13 +44,13 @@ CORS_OPTIONS = {
   'supports_credentials': True,
   'allow_headers': ['*'],
   'resources':['*'],
-  'origins': ['*']
+  'origins': ['http://localhost:8088', 'http://localhost:8888']
 }
-GUEST_ROLE_NAME = "Gamma"
-GUEST_TOKEN_JWT_SECRET = "test-guest-secret-change-me"
-GUEST_TOKEN_JWT_ALGO = "HS256"
-GUEST_TOKEN_HEADER_NAME = "X-GuestToken"
-GUEST_TOKEN_JWT_EXP_SECONDS = 900
+GUEST_ROLE_NAME = "Public"
+# GUEST_TOKEN_JWT_SECRET = "test-guest-secret-change-me"
+# GUEST_TOKEN_JWT_ALGO = "HS256"
+# GUEST_TOKEN_HEADER_NAME = "X-GuestToken"
+# GUEST_TOKEN_JWT_EXP_SECONDS = 900
 
 # Talisman Config
 TALISMAN_ENABLED = False
@@ -69,10 +69,9 @@ TALISMAN_ENABLED = False
 #     "frame_options_allow_from": "*"
 # }
 # HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
-# OVERRIDE_HTTP_HEADERS = {
-#     "X-Frame-Options": "ALLOWALL",
-#     "Content-Security-Policy": "frame-ancestors 'self' dev-app.sodahub.eu"
-# }
+OVERRIDE_HTTP_HEADERS = {
+    "X-Frame-Options": "ALLOWALL",
+}
 
 EXAMPLES_USER = os.getenv("EXAMPLES_USER")
 EXAMPLES_PASSWORD = os.getenv("EXAMPLES_PASSWORD")
@@ -143,7 +142,7 @@ class CeleryConfig:
 
 CELERY_CONFIG = CeleryConfig
 
-FEATURE_FLAGS = {"ALERT_REPORTS": True, "EMBEDDED_SUPERSET": True}
+FEATURE_FLAGS = {"ALERT_REPORTS": True,"EMBEDDABLE_CHARTS": True, "EMBEDDED_SUPERSET": True}
 ALERT_REPORTS_NOTIFICATION_DRY_RUN = True
 WEBDRIVER_BASEURL = f"http://superset_app{os.environ.get('SUPERSET_APP_ROOT', '/')}/"  # When using docker compose baseurl should be http://superset_nginx{ENV{BASEPATH}}/  # noqa: E501
 # The base URL for the email report hyperlinks.
