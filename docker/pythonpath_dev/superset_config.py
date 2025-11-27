@@ -47,6 +47,8 @@ CORS_OPTIONS = {
   'origins': ['http://localhost:8088', 'https://app.sodahub.eu', 'https://dev-app.sodahub.eu', 'https://analysis.sodahub.eu' ]
 }
 GUEST_ROLE_NAME = "Admin"
+ENABLE_GUEST_TOKEN = True
+GUEST_TOKEN_JWT_AUDIANCE = None
 GUEST_TOKEN_JWT_SECRET = "euyqwuiada#!@#jjhbbAJB"
 GUEST_TOKEN_JWT_ALGO = "HS256"
 GUEST_TOKEN_HEADER_NAME = "X-GuestToken"
@@ -143,7 +145,7 @@ class CeleryConfig:
 
 CELERY_CONFIG = CeleryConfig
 
-FEATURE_FLAGS = {"ALERT_REPORTS": True,"EMBEDDABLE_CHARTS": True, "EMBEDDED_SUPERSET": True, "DASHBOARD_RBAC": True}
+FEATURE_FLAGS = {"ALERT_REPORTS": True,"EMBEDDABLE_CHARTS": True, "EMBEDDED_SUPERSET": True, "DASHBOARD_RBAC": True, "GUEST_TOKEN": True}
 ALERT_REPORTS_NOTIFICATION_DRY_RUN = True
 WEBDRIVER_BASEURL = f"http://superset_app{os.environ.get('SUPERSET_APP_ROOT', '/')}/"  # When using docker compose baseurl should be http://superset_nginx{ENV{BASEPATH}}/  # noqa: E501
 # The base URL for the email report hyperlinks.
