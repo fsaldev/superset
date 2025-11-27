@@ -46,7 +46,7 @@ CORS_OPTIONS = {
   'resources':['*'],
   'origins': ['http://localhost:8088', 'https://app.sodahub.eu', 'https://dev-app.sodahub.eu', 'https://analysis.sodahub.eu' ]
 }
-GUEST_ROLE_NAME = "Gamma"
+GUEST_ROLE_NAME = "Admin"
 GUEST_TOKEN_JWT_SECRET = "euyqwuiada#!@#jjhbbAJB"
 GUEST_TOKEN_JWT_ALGO = "HS256"
 GUEST_TOKEN_HEADER_NAME = "X-GuestToken"
