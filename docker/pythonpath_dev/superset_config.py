@@ -47,7 +47,10 @@ CORS_OPTIONS = {
   'origins': ['*']
 }
 GUEST_ROLE_NAME = "Gamma"
-WTF_CSRF_ENABLED = False
+GUEST_TOKEN_JWT_SECRET = "test-guest-secret-change-me"
+GUEST_TOKEN_JWT_ALGO = "HS256"
+GUEST_TOKEN_HEADER_NAME = "X-GuestToken"
+GUEST_TOKEN_JWT_EXP_SECONDS = 900
 
 # Talisman Config
 TALISMAN_ENABLED = False
