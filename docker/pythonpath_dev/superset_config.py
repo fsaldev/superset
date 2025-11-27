@@ -50,21 +50,21 @@ GUEST_ROLE_NAME = "Gamma"
 
 # Talisman Config
 TALISMAN_ENABLED = False
-# TALISMAN_CONFIG = {
-#     "content_security_policy": {
-#         "frame-ancestors":  [
-#             "https://analysis.sodahub.eu",
-#             "https://app.sodahub.eu", 
-#             "https://dev-app.sodahub.eu", 
-#             "http://localhost:8088",
-#         ],
-#     },
-#     "force_https": False,
-#     "force_https_permanent": False,
-#     "frame_options": "ALLOWFROM",
-#     "frame_options_allow_from": "*"
-# }
-OVERRIDE_HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
+TALISMAN_CONFIG = {
+    "content_security_policy": {
+        "frame-ancestors":  [
+            "https://analysis.sodahub.eu",
+            "https://app.sodahub.eu", 
+            "https://dev-app.sodahub.eu", 
+            "http://localhost:8088",
+        ],
+    },
+    # "force_https": False,
+    # "force_https_permanent": False,
+    # "frame_options": "ALLOWFROM",
+    # "frame_options_allow_from": "*"
+}
+HTTP_HEADERS = {'X-Frame-Options': 'ALLOWALL'}
 
 EXAMPLES_USER = os.getenv("EXAMPLES_USER")
 EXAMPLES_PASSWORD = os.getenv("EXAMPLES_PASSWORD")
